@@ -2,7 +2,7 @@
   inputs,
   cell,
 }: let
-  inherit (inputs) nixpkgs POP;
+  inherit (inputs) nixpkgs POP jsonschema;
   l = nixpkgs.lib // builtins // (POP.lib);
 in {
   inherit l;
@@ -14,4 +14,6 @@ in {
     '';
   in
     l.importJSON toJsonFile;
+
+  jsonSchema = cell.library.importYamlFromJson "${jsonschema}/structurizr.yaml";
 }

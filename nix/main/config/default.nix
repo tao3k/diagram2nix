@@ -2,7 +2,9 @@
   inputs,
   cell,
 }: let
-  inherit (inputs) jsonschema;
+  inherit (cell.library) l jsonSchema;
 in {
-  jsonSchema = cell.library.importYamlFromJson "${jsonschema}/structurizr.yaml";
+  systemContextView = import ./systemContextView.nix {inherit jsonSchema l;};
+  softwareSystems = import ./softwareSystems.nix {inherit jsonSchema l;};
+  model = import ./model.nix {inherit jsonSchema l;};
 }
