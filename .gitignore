@@ -1,0 +1,5 @@
+# -*- mode: gitignore; -*-
+/.std
+
+# nixago: ignore-linked-files
+treefmt.toml

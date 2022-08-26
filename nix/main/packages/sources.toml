@@ -1,0 +1,4 @@
+[structurizr-cli]
+src.github = "structurizr/cli"
+src.prefix = "v"
+fetch.url = "https://github.com/structurizr/cli/releases/download/v$ver/structurizr-cli-$ver.zip"
