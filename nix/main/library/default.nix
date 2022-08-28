@@ -2,10 +2,15 @@
   inputs,
   cell,
 }: let
-  inherit (inputs) nixpkgs POP jsonschema;
+  inherit (inputs) nixpkgs POP std self;
   l = nixpkgs.lib // builtins // (POP.lib);
+
+  __inputs__ = let
+    inputs' = l.getFlake (l.toPath ./.);
+  in
+    (std.deSystemize nixpkgs.system inputs'.inputs) // inputs;
 in {
-  inherit l;
+  inherit l __inputs__;
 
   importYamlFromJson = f: let
     name = l.last (l.splitString "/" f);
@@ -15,5 +20,5 @@ in {
   in
     l.importJSON toJsonFile;
 
-  jsonSchema = cell.library.importYamlFromJson "${jsonschema}/structurizr.yaml";
+  jsonSchema = cell.library.importYamlFromJson "${__inputs__.jsonschema}/structurizr.yaml";
 }

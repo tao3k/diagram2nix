@@ -209,22 +209,6 @@
         "type": "github"
       }
     },
-    "jsonschema": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1646143122,
-        "narHash": "sha256-RojrNcoAwCIk3rEj/Lb0MaJCuKt4RGhiY1QQnU81AYI=",
-        "owner": "structurizr",
-        "repo": "json",
-        "rev": "c90dace5a72ad959123aea69ca7ed9d4bc3c9a67",
-        "type": "github"
-      },
-      "original": {
-        "owner": "structurizr",
-        "repo": "json",
-        "type": "github"
-      }
-    },
     "latest": {
       "locked": {
         "lastModified": 1660982774,
@@ -455,7 +439,6 @@
       "inputs": {
         "POP": "POP",
         "cells-lab": "cells-lab",
-        "jsonschema": "jsonschema",
         "nixpkgs": "nixpkgs_4",
         "std": [
           "cells-lab",

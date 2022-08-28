@@ -8,11 +8,6 @@
     POP.url = "github:divnix/POP/visibility";
   };
 
-  inputs = {
-    jsonschema.url = "github:structurizr/json";
-    jsonschema.flake = false;
-  };
-
   outputs = {std, ...} @ inputs:
     std.growOn {
       inherit inputs;
@@ -21,13 +16,16 @@
         (std.installables "packages")
 
         (std.functions "devshellProfiles")
+
         (std.devshells "devshells")
 
         (std.runnables "entrypoints")
 
         (std.functions "library")
 
-        (std.data "config")
+        (std.functions "config")
+
+        (std.data "tests")
 
         (std.functions "packages")
 

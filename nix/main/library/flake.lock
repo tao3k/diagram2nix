@@ -1,0 +1,44 @@
+{
+  "nodes": {
+    "example": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1660912558,
+        "narHash": "sha256-9Yj4ZPCZnFX9CZ84Vtzy3jV8PZONeP1zZ9etECViXRc=",
+        "owner": "structurizr",
+        "repo": "examples",
+        "rev": "f75c9baed521ab51076198a36b1322af85f18b9d",
+        "type": "github"
+      },
+      "original": {
+        "owner": "structurizr",
+        "repo": "examples",
+        "type": "github"
+      }
+    },
+    "jsonschema": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1646143122,
+        "narHash": "sha256-RojrNcoAwCIk3rEj/Lb0MaJCuKt4RGhiY1QQnU81AYI=",
+        "owner": "structurizr",
+        "repo": "json",
+        "rev": "c90dace5a72ad959123aea69ca7ed9d4bc3c9a67",
+        "type": "github"
+      },
+      "original": {
+        "owner": "structurizr",
+        "repo": "json",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "example": "example",
+        "jsonschema": "jsonschema"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}
