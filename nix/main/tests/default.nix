@@ -5,7 +5,8 @@
   inherit (cell) config library;
   inherit (library) l __inputs__;
 in {
-  a = (config.model.new {}).__unpop__;
+  model = (config.model.new {}).__unpop__;
+
   people = (config.people.new {}).__unpop__;
 
   relationships = (config.relationships.new {}).__unpop__;

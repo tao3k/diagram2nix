@@ -8,7 +8,7 @@ in {
   systemContextView = import ./systemContextView.nix {inherit jsonSchema l;};
   softwareSystems = import ./softwareSystems.nix {inherit jsonSchema l;};
 
-  model = import ./model.nix {inherit jsonSchema l;};
+  model = import ./model.nix args';
 
   people = import ./people.nix args';
 

@@ -1,5 +1,9 @@
 {
   l,
   jsonSchema,
-}: {...}:
-l.kPop jsonSchema.components.schemas.Model.properties
+  inputs,
+  cell,
+}: {
+  new = {...}:
+    l.kPop {};
+}

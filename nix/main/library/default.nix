@@ -6,9 +6,9 @@
   l = nixpkgs.lib // builtins // (POP.lib);
 
   __inputs__ = let
-    inputs' = l.getFlake (l.toPath ./.);
+    inputs' = (import "${(std.incl self [(self + /lock)])}/lock").inputs;
   in
-    (std.deSystemize nixpkgs.system inputs'.inputs) // inputs;
+    (std.deSystemize nixpkgs.system inputs') // inputs;
 in {
   inherit l __inputs__;
 

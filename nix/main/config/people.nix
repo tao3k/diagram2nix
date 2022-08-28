@@ -7,8 +7,8 @@
   relationships' = (cell.config.relationships {}).__unpop__;
   description' = jsonSchema.components.schemas.Person.properties.description.description;
   name' = jsonSchema.components.schemas.Person.properties.name.description;
-in
-  {
+in {
+  new = {
     description ? description',
     name ? name',
     id ? 1,
@@ -25,4 +25,5 @@ in
       // {
         inherit id tags' name location defaultTags;
         inherit relationships;
-      })
+      });
+}
