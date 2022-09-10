@@ -15,15 +15,11 @@
   }:
     l.pop {
       visibility = {
-        _annotations = false;
-        required = false;
-        inputs = false;
-        templates = false;
-        panels = false;
-        addAnnotation = false;
-        addAnnotations = false;
-        addTemplates = false;
-        addTemplate = false;
+        _models = false;
+        addModel = false;
+        addModels = false;
+        addView = false;
+        addViews = false;
       };
     };
 }
