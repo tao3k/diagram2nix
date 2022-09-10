@@ -14,6 +14,4 @@ in {
   ElementStyle = (config.ElementStyle.new {}).__unpop__;
 
   ElementView = (config.ElementView.new {}).__unpop__;
-
-  big-bank-plc = l.fromJSON (l.readFile (__inputs__.example + "/json/big-bank-plc/workspace.json"));
 }
