@@ -1,0 +1,3 @@
+[bafi]
+src.git = "https://github.com/mmalcek/bafi"
+fetch.github = "mmalcek/bafi"

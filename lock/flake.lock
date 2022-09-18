@@ -136,6 +136,21 @@
         "type": "github"
       }
     },
+    "flake-utils": {
+      "locked": {
+        "lastModified": 1659877975,
+        "narHash": "sha256-zllb8aq3YO3h8B/U0/J1WBgAL8EX5yWf5pMj3G0NAmc=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "c0e246b9b83f637f4681389ecabcb2681b4f3af0",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
     "flake-utils-pre-commit": {
       "locked": {
         "lastModified": 1644229661,
@@ -245,6 +260,21 @@
         "type": "indirect"
       }
     },
+    "nixpkgs_2": {
+      "locked": {
+        "lastModified": 1663506930,
+        "narHash": "sha256-jlf236u1j997iWj17lPqdF4Nb7A7r+TKAF5WvUtdiwc=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "bf8f3c5524780f75f446c6aac306a5ebc056ba5b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "poetry2nix": {
       "flake": false,
       "locked": {
@@ -258,6 +288,25 @@
       "original": {
         "owner": "nix-community",
         "ref": "1.21.0",
+        "repo": "poetry2nix",
+        "type": "github"
+      }
+    },
+    "poetry2nix_2": {
+      "inputs": {
+        "flake-utils": "flake-utils",
+        "nixpkgs": "nixpkgs_2"
+      },
+      "locked": {
+        "lastModified": 1662879385,
+        "narHash": "sha256-ZmiyHn0uPH4xHYcOhY0e0sPtfyM6jCF/shmVq2aTOLc=",
+        "owner": "nix-community",
+        "repo": "poetry2nix",
+        "rev": "4f8d61cd936f853242a4ce1fd476f5488c288c26",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
         "repo": "poetry2nix",
         "type": "github"
       }
@@ -293,7 +342,8 @@
         "dream2nix": "dream2nix",
         "example": "example",
         "json-to-simple-graphql-schema": "json-to-simple-graphql-schema",
-        "jsonschema": "jsonschema"
+        "jsonschema": "jsonschema",
+        "poetry2nix": "poetry2nix_2"
       }
     },
     "rust-analyzer-src": {

@@ -54,7 +54,7 @@ in {
       # https://github.com/yamafaktory/craftql
       # shellcheck disable=all
       cat ${data} | json-to-simple-graphql-schema --baseType BaseType --prefix Prefix > /tmp/output.graphql
-      jq '.' ${complex} | json-to-simple-graphql-schema --baseType BaseType --prefix "" > /tmp/complex.graphql
+      jq '.' ${complex} | json-to-simple-graphql-schema --baseType BaseType --prefix Prefix > /tmp/complex.graphql
       craftql /tmp/complex.graphql > complex.graphviz
     '';
   };

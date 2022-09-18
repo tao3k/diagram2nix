@@ -13,6 +13,8 @@
 
     craftql.url = "github:yamafaktory/craftql";
     craftql.flake = false;
+
+    poetry2nix.url = "github:nix-community/poetry2nix";
   };
 
   outputs = {self, ...}: {};
