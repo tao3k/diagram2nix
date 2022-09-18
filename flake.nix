@@ -1,10 +1,13 @@
 {
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     cells-lab.url = "github:GTrunSec/cells-lab";
-
+    # follows
+    nixpkgs.follows = "cells-lab/nixpkgs";
+    nixpkgs-lock.follows = "cells-lab/nixpkgs";
     std.follows = "cells-lab/std";
+  };
 
+  inputs = {
     POP.url = "github:divnix/POP/visibility";
   };
 

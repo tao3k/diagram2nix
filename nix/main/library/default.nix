@@ -3,12 +3,14 @@
   cell,
 }: let
   inherit (inputs) nixpkgs POP std self;
+  inherit (inputs.cells-lab.main.library) callFlake;
+
   l = nixpkgs.lib // builtins // (POP.lib);
 
-  __inputs__ = let
-    inputs' = (import "${(std.incl self [(self + /lock)])}/lock").inputs;
-  in
-    (std.deSystemize nixpkgs.system inputs') // inputs;
+  __inputs__ = callFlake "${(std.incl self [(self + /lock)])}/lock" {
+    nixpkgs.locked = inputs.nixpkgs-lock.sourceInfo;
+    dream2nix.inputs.nixpkgs = "nixpkgs";
+  };
 in {
   inherit l __inputs__;
 
@@ -19,6 +21,4 @@ in {
     '';
   in
     l.importJSON toJsonFile;
-
-  jsonSchema = cell.library.importYamlFromJson "${__inputs__.jsonschema}/structurizr.yaml";
 }

@@ -14,12 +14,16 @@ in
       nixago = [] ++ l.attrValues cell.nixago;
       commands = [
         {
+          package = inputs.cells.structurizr.packages.structurizr-cli;
+        }
+        {
           name = "nvfetcher-update";
           command = ''
             nix develop github:GTrunSec/cells-lab#devShells.x86_64-linux.update \
             --refresh --command \
             nvfetcher-update nix/main/packages/sources.toml
           '';
+          help = "Update nix/main/packages/sources.toml";
         }
       ];
     };

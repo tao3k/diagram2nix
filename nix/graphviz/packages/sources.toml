@@ -1,0 +1,3 @@
+[yml2dot]
+src.git = "https://github.com/lucasepe/yml2dot"
+fetch.github = "lucasepe/yml2dot"

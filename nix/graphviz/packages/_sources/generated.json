@@ -1,0 +1,21 @@
+{
+    "yml2dot": {
+        "cargoLocks": null,
+        "extract": null,
+        "name": "yml2dot",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "lucasepe",
+            "repo": "yml2dot",
+            "rev": "0d15bbb983dc1b503efe21b6583cb1319adcbe15",
+            "sha256": "sha256-Pbi62CZJGgus3wBiqQ5W3ipvUeQKHn1bDYJF6LElCH4=",
+            "type": "github"
+        },
+        "version": "0d15bbb983dc1b503efe21b6583cb1319adcbe15"
+    }
+}

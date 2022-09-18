@@ -8,6 +8,7 @@
     configuration ? {},
     model ? {},
     documentation ? {},
+    styles ? {},
     description ? "",
     lastModifiedDate ? "now",
     name ? "Untitled",
@@ -21,5 +22,12 @@
         addView = false;
         addViews = false;
       };
+
+      /*
+      * This is the main function that will be called when the cell is executed.
+      */
+      model = {};
+      views = {};
+      sytles = {};
     };
 }
