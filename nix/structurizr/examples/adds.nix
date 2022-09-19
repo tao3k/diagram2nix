@@ -14,7 +14,7 @@ in
 .addAnnotations ["foo2" "bar2"])
 .addLink "foolinks")
 .addLink "barlinks")
-.addLinks [(link.dashboards {title="foo"; tags=["foo" "bar"];}) (link.dashboards {title="bar"; tags=["foo" "bar"];})]).__unpop__
+    .addLinks [(link.dashboards {title="foo"; tags=["foo" "bar"];}) (link.dashboards {title="bar"; tags=["foo" "bar"];})]).__unpop__
 
   ((((((dashboard.new {title="test2";})
     .addPanel {panel=row.new {title="id0";}; gridPos={ x= 14; y= 42; w= 33; h= 26; };})

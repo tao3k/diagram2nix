@@ -2,11 +2,14 @@
   inputs,
   cell,
 } @ args: let
-  inherit (inputs.cells.main.library) l jsonSchema;
+  inherit (inputs.cells.main.library) l;
+  inherit (cell.library) jsonSchema;
   args' = args // {inherit l jsonSchema;};
 in {
   systemContextView = import ./systemContextView.nix {inherit jsonSchema l;};
-  softwareSystems = import ./softwareSystems.nix {inherit jsonSchema l;};
+  # softwareSystems = import ./softwareSystems.nix {inherit jsonSchema l;};
+
+  softwareSystem = import ./softwareSystem.nix {inherit jsonSchema l;};
 
   model = import ./model.nix args';
 

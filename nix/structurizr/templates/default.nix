@@ -5,7 +5,20 @@
   inherit (cell) config library;
   inherit (library) l __inputs__;
 in {
-  model = ((config.model.new {}).addSoftSystem {}).__unpop__;
+  model =
+    (
+      ((config.model.new {}).addSoftwareSystem {
+        id = "1";
+        tags = ["System" "Element System"];
+      })
+      .addSoftwareSystems [
+        (cell.config.softwareSystem.new {
+          id = "2";
+          tags = ["Element System"];
+        })
+      ]
+    )
+    .__unpop__;
 
   people = (config.people.new {}).__unpop__;
 

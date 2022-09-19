@@ -1,0 +1,15 @@
+
+digraph {
+    0 [ label = "Tags (Object)\l\l[String]" ]
+    1 [ label = "Resources (Object)\l\l[Boolean, Int, String]" ]
+    2 [ label = "Groups (Object)\l\l[String]" ]
+    3 [ label = "Extras (Object)\l\l[String]" ]
+    4 [ label = "Result (Object)\l\l[Boolean, Extras, Groups, Int, Resources, String, Tags]" ]
+    5 [ label = "BaseType (Object)\l\l[Boolean, Result, String]" ]
+    4 -> 5 [ ]
+    3 -> 4 [ ]
+    2 -> 4 [ ]
+    1 -> 4 [ ]
+    0 -> 4 [ ]
+}
+

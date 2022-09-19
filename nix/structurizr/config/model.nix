@@ -6,14 +6,28 @@
 }: {
   new = {...}:
     l.pop {
+      # make __unpop__ recursive
+      supers = [l.recursiveUnpop];
+
+      visibility = {
+        addSoftwareSystem = false;
+        addSoftwareSystems = false;
+      };
+
       extension = self: super: {
-        softSystem = {};
-        addSoftSystem = softSystem:
-          l.extendPop self (self: super: {
-            softSystems = [super.softSystem softSystem];
+        softwareSystems = [];
+
+        addSoftwareSystem = softwareSystem:
+          l.extendPop self (self: super: let
+            softwareSystem' =
+              if l.hasAttr "tags" softwareSystem
+              then softwareSystem // {tags = l.concatStringsSep "," softwareSystem.tags;}
+              else softwareSystem;
+          in {
+            softwareSystems = super.softwareSystems ++ [softwareSystem'];
           });
-        addSoftSystems = softSystem:
-          l.foldl (p: t: p.addSoftSystem t) self softSystem;
+        addSoftwareSystems = softwareSystems:
+          l.foldl (p: t: p.addSoftwareSystem t) self softwareSystems;
       };
     };
 }

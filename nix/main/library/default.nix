@@ -5,7 +5,7 @@
   inherit (inputs) nixpkgs POP std self;
   inherit (inputs.cells-lab.main.library) callFlake;
 
-  l = nixpkgs.lib // builtins // (POP.lib);
+  l = nixpkgs.lib // builtins // (POP.lib) // (import ./extend.nix {inherit l;});
 
   __inputs__ = callFlake "${(std.incl self [(self + /lock)])}/lock" {
     nixpkgs.locked = inputs.nixpkgs-lock.sourceInfo;

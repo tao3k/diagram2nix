@@ -17,6 +17,9 @@ in
           package = inputs.cells.structurizr.packages.structurizr-cli;
         }
         {
+          package = inputs.cells.graphviz.packages.craftql;
+        }
+        {
           name = "nvfetcher-update";
           command = ''
             nix develop github:GTrunSec/cells-lab#devShells.x86_64-linux.update \

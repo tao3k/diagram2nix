@@ -2,7 +2,7 @@
   inputs,
   cell,
 }: let
-  inherit (inputs.cells.main.library) l __inputs__;
+  inherit (inputs.cells.main.library) l __inputs__ importYamlFromJson;
 in {
-  jsonSchema = cell.library.importYamlFromJson "${__inputs__.jsonschema}/structurizr.yaml";
+  jsonSchema = importYamlFromJson "${__inputs__.jsonschema}/structurizr.yaml";
 }
