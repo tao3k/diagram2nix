@@ -31,7 +31,7 @@ in
         }
       ];
     };
-    doc ={...}: {
+    doc = {...}: {
       name = "diagram2nix-doc";
       nixago = [cell.nixago.mdbook];
     };

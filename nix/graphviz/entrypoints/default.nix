@@ -16,17 +16,19 @@ in {
     '';
   };
 
-  test = writeShellApplication {
-    name = "test";
+  yaml2dot = writeShellApplication {
+    name = "yaml2dot";
     runtimeInputs = [nixpkgs.graphviz cell.packages.yaml2dot];
     text = let
+      complex = (nixpkgs.formats.yaml {}).generate "complex.yaml" (l.fromJSON (l.readFile "${__inputs__.json-to-simple-graphql-schema}/test/fixtures/complex.json"));
       data = (nixpkgs.formats.yaml {}).generate "data.yaml" {
         a = "1";
         b = "2";
         c = "3";
       };
     in ''
-      yml2dot ${data} | dot -Tpng > output.png
+      yml2dot ${data} | dot -Tpng > "$PRJ_ROOT"/docs/graphviz/yaml2dot.png
+      yml2dot ${complex} | dot -Tpng > "$PRJ_ROOT"/docs/graphviz/yaml2dot-complex.png
     '';
   };
 
