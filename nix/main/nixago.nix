@@ -8,6 +8,7 @@ in {
     configData.formatter.nix = {
       excludes = [
         "generated.nix"
+        "adds.nix"
       ];
     };
     configData.formatter.prettier = {

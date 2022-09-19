@@ -5,7 +5,7 @@
   inherit (cell) config library;
   inherit (library) l __inputs__;
 in {
-  model = (config.model.new {}).__unpop__;
+  model = ((config.model.new {}).addSoftSystem {}).__unpop__;
 
   people = (config.people.new {}).__unpop__;
 

@@ -7,7 +7,7 @@
 in
   l.mapAttrs (_: std.std.lib.mkShell) {
     default = {...}: {
-      name = "default: Cells Lab Tempalte";
+      name = "diagram2nix";
       imports = [
         inputs.cells-lab.main.devshellProfiles.default
       ];

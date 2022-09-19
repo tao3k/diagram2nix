@@ -27,10 +27,10 @@ in {
       c = "3";
     };
     script = nixpkgs.writeText "script.py" ''
-    from json2xml import json2xml
-    from json2xml.utils import readfromjson
-    data = readfromjson("${data}")
-    print(json2xml.Json2xml(data).to_xml())
+      from json2xml import json2xml
+      from json2xml.utils import readfromjson
+      data = readfromjson("${data}")
+      print(json2xml.Json2xml(data).to_xml())
     '';
   in
     writeShellApplication {
