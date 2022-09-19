@@ -11,6 +11,7 @@ in
       imports = [
         inputs.cells-lab.main.devshellProfiles.default
       ];
+
       nixago = [] ++ l.attrValues cell.nixago;
       commands = [
         {
@@ -29,5 +30,9 @@ in
           help = "Update nix/main/packages/sources.toml";
         }
       ];
+    };
+    doc ={...}: {
+      name = "diagram2nix-doc";
+      nixago = [cell.nixago.mdbook];
     };
   }
