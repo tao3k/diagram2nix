@@ -28,7 +28,8 @@
 
         (std.blockTypes.functions "config")
 
-        (std.blockTypes.data "tests")
+        (std.blockTypes.data "templates")
+
         (std.blockTypes.data "examples")
 
         (std.blockTypes.functions "packages")

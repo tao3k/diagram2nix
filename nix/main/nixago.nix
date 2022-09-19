@@ -13,6 +13,7 @@ in {
     };
     configData.formatter.prettier = {
       excludes = [
+        "generated.json"
         "conf/schemas/*"
       ];
     };
@@ -20,7 +21,7 @@ in {
 
   mdbook = std.presets.nixago.mdbook {
     configData = {
-      book.title = "structurizr2nix";
+      book.title = "diagram2nix";
     };
   };
 }

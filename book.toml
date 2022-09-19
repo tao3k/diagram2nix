@@ -2,7 +2,7 @@
 language = "en"
 multilingual = false
 src = "docs"
-title = "structurizr2nix"
+title = "diagram2nix"
 
 [build]
 build-dir = "docs/book"
