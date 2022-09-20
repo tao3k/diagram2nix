@@ -5,9 +5,9 @@
   inherit (cell) config library;
   inherit (library) l __inputs__;
 in {
-  model =
+  diagram =
     (
-      ((config.model.new {}).addSoftwareSystem {
+      ((config.diagram.new {}).addSoftwareSystem {
         id = "1";
         tags = ["System" "Element System"];
       })

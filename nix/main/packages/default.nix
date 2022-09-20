@@ -2,9 +2,15 @@
   inputs,
   cell,
 }: let
-  inherit (inputs) nixpkgs;
+  inherit (cell.library) __inputs__;
+  nixpkgs = inputs.nixpkgs.appendOverlays [
+    __inputs__.poetry2nix.overlay
+  ];
 in
   {
+    json2xml = nixpkgs.poetry2nix.mkPoetryEnv {
+      projectDir = ./json2xml;
+    };
     bafi = let
       sources = nixpkgs.callPackage ./_sources/generated.nix {};
     in

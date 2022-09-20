@@ -15,19 +15,28 @@
     views ? [],
   }:
     l.pop {
+      # make __unpop__ recursive
+      supers = [l.recursiveUnpop];
+
       visibility = {
-        _models = false;
-        addModel = false;
-        addModels = false;
-        addView = false;
-        addViews = false;
+        addSoftwareSystem = false;
+        addSoftwareSystems = false;
       };
 
-      /*
-      * This is the main function that will be called when the cell is executed.
-      */
-      model = {};
-      views = {};
-      sytles = {};
+      extension = self: super: {
+        model.softwareSystems = [];
+
+        addSoftwareSystem = softwareSystem:
+          l.extendPop self (self: super: let
+            softwareSystem' =
+              if l.hasAttr "tags" softwareSystem
+              then softwareSystem // {tags = l.concatStringsSep "," softwareSystem.tags;}
+              else softwareSystem;
+          in {
+            model.softwareSystems = super.model.softwareSystems ++ [softwareSystem'];
+          });
+        addSoftwareSystems = softwareSystems:
+          l.foldl (p: t: p.addSoftwareSystem t) self softwareSystems;
+      };
     };
 }

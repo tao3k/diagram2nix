@@ -4,9 +4,7 @@
 }: let
   inherit (inputs.cells-lab._writers.library) writeShellApplication;
   inherit (cell.library) __inputs__ l;
-  nixpkgs = inputs.nixpkgs.appendOverlays [
-    __inputs__.poetry2nix.overlay
-  ];
+  inherit (inputs) nixpkgs;
 in {
   update = writeShellApplication {
     name = "update";
@@ -18,14 +16,9 @@ in {
     '';
   };
   json2xml = let
-    python = nixpkgs.poetry2nix.mkPoetryEnv {
-      projectDir = ./json2xml;
-    };
-    data = (nixpkgs.formats.json {}).generate "data.json" {
-      a = "1";
-      b = "2";
-      c = "3";
-    };
+    data = (nixpkgs.formats.json {}).generate "data.json" ({
+      }
+      // (l.fromJSON (l.readFile ./json2xml.json)));
     script = nixpkgs.writeText "script.py" ''
       from json2xml import json2xml
       from json2xml.utils import readfromjson
@@ -35,9 +28,10 @@ in {
   in
     writeShellApplication {
       name = "json2xml";
-      runtimeInputs = [python];
+      runtimeInputs = [cell.packages.json2xml];
       text = ''
-        python ${script} > json2xml.xml
+        echo "${data}"
+        python ${script} > "$PRJ_ROOT"/docs/BPMN/json2xml.xml
       '';
     };
 }
