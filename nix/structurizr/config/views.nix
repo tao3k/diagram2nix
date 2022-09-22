@@ -4,28 +4,52 @@
   inputs,
   cell,
 }: {
+
+
   new = {
-    componentViews ? [],
+    component ? [],
     configuration ? {},
-    containerViews ? [],
-    customViews ? [],
+    container ? {},
+    custom ? [],
     deploymentView ? [],
-    dynamicViews ? [],
-    filteredViews ? [],
+    dynamic ? [],
+    filtered ? [],
     systemContextView ? [],
     systemLandscapeView ? [],
   }:
     l.kPop {
       inherit
-        componentViews
+        component
         configuration
-        containerViews
-        customViews
+        container
+        custom
         deploymentView
-        dynamicViews
-        filteredViews
+        dynamic
+        filtered
         systemContextView
         systemLandscapeView
         ;
+
+      theme = "default";
+      /*
+
+      autoLayout: https://github.com/structurizr/dsl/blob/master/docs/language-reference.md#autolayout
+                  [tb|bt|lr|rl]
+      */
+    }
+    // l.optionalAttrs (container != {}) {
+      # container = {
+      #   softwareSystem = {
+      #     include = "*";
+      #     autoLayout = "lr";
+      #   };
+      # };
+      container = container;
+    }
+    // {
+      extensions = self: super: {
+        addSystemContext = {};
+        addContainer = {};
+      };
     };
 }

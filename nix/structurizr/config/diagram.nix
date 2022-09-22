@@ -21,11 +21,23 @@
       visibility = {
         addSoftwareSystem = false;
         addSoftwareSystems = false;
+
+        addPerson = false;
+        addPeople = false;
       };
 
       extension = self: super: {
-        model.softwareSystems = [];
+        # person is a function that takes a person and returns a new people list
+        model.people = [];
+        addPerson = person:
+          l.extendPop self (self: super: {
+            model.people = super.model.people ++ [person];
+          });
+        addPeople = people:
+          l.foldl (p: t: p.addPerson t) self people;
 
+        # softwareSystem is a function that takes a softwareSystem and returns a new softwareSystems list
+        model.softwareSystems = [];
         addSoftwareSystem = softwareSystem:
           l.extendPop self (self: super: let
             softwareSystem' =

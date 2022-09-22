@@ -11,7 +11,7 @@ in {
 
   softwareSystem = import ./softwareSystem.nix {inherit jsonSchema l;};
 
-  people = import ./people.nix args';
+  person = import ./person.nix args';
 
   relationships = import ./relationships.nix {inherit jsonSchema l;};
 

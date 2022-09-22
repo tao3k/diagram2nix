@@ -3,7 +3,8 @@
   cell,
 }: let
   inherit (inputs.cells-lab._writers.library) writeShellApplication;
-  inherit (cell.library) __inputs__ l;
+  inherit (inputs.cells.main.library) __inputs__ l;
+
   nixpkgs = inputs.nixpkgs.appendOverlays [
     __inputs__.poetry2nix.overlay
   ];
@@ -24,7 +25,7 @@ in {
   in
     writeShellApplication {
       name = "json2xml";
-      runtimeInputs = [inputs.cells.packages.json2xml];
+      runtimeInputs = [inputs.cells.main.packages.json2xml];
       text = ''
         python ${script} > json2xml.xml
       '';

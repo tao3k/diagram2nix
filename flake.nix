@@ -30,7 +30,7 @@
 
         (std.blockTypes.data "templates")
 
-        (std.blockTypes.data "examples")
+        (std.blockTypes.files "examples")
 
         (std.blockTypes.functions "packages")
 

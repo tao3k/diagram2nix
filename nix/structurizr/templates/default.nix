@@ -3,7 +3,7 @@
   cell,
 }: let
   inherit (cell) config library;
-  inherit (library) l __inputs__;
+  inherit (inputs.cells.main.library) l __inputs__;
 in {
   diagram =
     (
@@ -20,11 +20,17 @@ in {
     )
     .__unpop__;
 
-  people = (config.people.new {}).__unpop__;
-
   relationships = (config.relationships.new {}).__unpop__;
 
   ElementStyle = (config.ElementStyle.new {}).__unpop__;
 
   ElementView = (config.ElementView.new {}).__unpop__;
+
+  a =
+    l.kxPop (cell.config.softwareSystem.new {
+      id = "2";
+      tags = ["Element System"];
+    }) {
+      b = "s";
+    };
 }
