@@ -2,7 +2,7 @@
   inputs,
   cell,
 }: let
-  inherit (cell.library) __inputs__;
+  inherit (cell.lib) __inputs__;
   nixpkgs = inputs.nixpkgs.appendOverlays [
     __inputs__.poetry2nix.overlay
   ];

@@ -2,8 +2,8 @@
   inputs,
   cell,
 }: let
-  inherit (inputs.cells-lab._writers.library) writeShellApplication;
-  inherit (inputs.cells.main.library) __inputs__ l;
+  inherit (inputs.cells-lab._writers.lib) writeShellApplication;
+  inherit (inputs.cells.main.lib) __inputs__ l;
 
   nixpkgs = inputs.nixpkgs.appendOverlays [
     __inputs__.poetry2nix.overlay

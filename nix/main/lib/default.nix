@@ -3,7 +3,7 @@
   cell,
 }: let
   inherit (inputs) nixpkgs POP std self;
-  inherit (inputs.cells-lab.main.library) callFlake;
+  inherit (inputs.cells-lab.main.lib) callFlake;
 
   l = nixpkgs.lib // builtins // (POP.lib) // (import ./extend.nix {inherit l;});
 

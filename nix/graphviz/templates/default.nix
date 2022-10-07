@@ -2,7 +2,7 @@
   inputs,
   cell,
 }: let
-  inherit (cell) config library;
-  inherit (library) l __inputs__;
+  inherit (cell) config lib;
+  inherit (lib) l __inputs__;
 in {
 }

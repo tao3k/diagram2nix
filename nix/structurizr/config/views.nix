@@ -4,8 +4,6 @@
   inputs,
   cell,
 }: {
-
-
   new = {
     component ? [],
     configuration ? {},

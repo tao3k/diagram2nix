@@ -2,7 +2,7 @@
   inputs,
   cell,
 }: {
-  simple = cell.library.json2plantuml {
+  simple = cell.lib.json2plantuml {
     name = "simple";
     config = {
       a = "b";

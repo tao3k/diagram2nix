@@ -2,8 +2,8 @@
   inputs,
   cell,
 } @ args: let
-  inherit (inputs.cells.main.library) l;
-  inherit (cell.library) jsonSchema;
+  inherit (inputs.cells.main.lib) l;
+  inherit (cell.lib) jsonSchema;
   args' = args // {inherit l jsonSchema;};
 in {
   systemContextView = import ./systemContextView.nix {inherit jsonSchema l;};

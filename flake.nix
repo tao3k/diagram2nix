@@ -14,7 +14,9 @@
   outputs = {std, ...} @ inputs:
     std.growOn {
       inherit inputs;
+
       cellsFrom = ./nix;
+
       cellBlocks = [
         (std.blockTypes.installables "packages")
 
@@ -24,7 +26,7 @@
 
         (std.blockTypes.runnables "entrypoints")
 
-        (std.blockTypes.functions "library")
+        (std.blockTypes.functions "lib")
 
         (std.blockTypes.functions "config")
 

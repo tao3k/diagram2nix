@@ -2,8 +2,8 @@
   inputs,
   cell,
 }: let
-  inherit (cell) config library;
-  inherit (inputs.cells.main.library) l __inputs__;
+  inherit (cell) config lib;
+  inherit (inputs.cells.main.lib) l __inputs__;
 in {
   diagram =
     (
