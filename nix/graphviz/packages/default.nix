@@ -3,7 +3,7 @@
   cell,
 }: let
   inherit (inputs) nixpkgs;
-  inherit (inputs.cells.main.lib) __inputs__;
+  inherit (inputs.cells.common.lib) __inputs__;
 in {
   yaml2dot = let
     sources = nixpkgs.callPackage ./_sources/generated.nix {};

@@ -4,7 +4,7 @@
 }: let
   inherit (inputs.cells-lab._writers.lib) writeShellApplication;
   inherit (inputs) nixpkgs;
-  inherit (inputs.cells.main.lib) __inputs__ l;
+  inherit (inputs.cells.common.lib) __inputs__ l;
 in {
   update = writeShellApplication {
     name = "update";

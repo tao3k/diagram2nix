@@ -9,7 +9,7 @@ in
     default = {...}: {
       name = "diagram2nix";
       imports = [
-        inputs.cells-lab.main.devshellProfiles.default
+        inputs.cells-lab.automation.devshellProfiles.default
       ];
 
       nixago = [] ++ l.attrValues cell.nixago;

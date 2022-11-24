@@ -17,31 +17,31 @@
 
       cellsFrom = ./nix;
 
-      cellBlocks = [
-        (std.blockTypes.installables "packages")
+      cellBlocks = with std.blockTypes;[
+        (installables "packages")
 
-        (std.blockTypes.functions "devshellProfiles")
+        (functions "devshellProfiles")
 
-        (std.blockTypes.devshells "devshells")
+        (devshells "devshells")
 
-        (std.blockTypes.runnables "entrypoints")
+        (runnables "entrypoints")
 
-        (std.blockTypes.functions "lib")
+        (functions "lib")
 
-        (std.blockTypes.functions "config")
+        (functions "config")
 
-        (std.blockTypes.data "templates")
+        (data "templates")
 
-        (std.blockTypes.files "examples")
+        (files "examples")
 
-        (std.blockTypes.functions "packages")
+        (functions "packages")
 
-        (std.blockTypes.functions "overlays")
+        (functions "overlays")
 
-        (std.blockTypes.nixago "nixago")
+        (nixago "nixago")
       ];
     } {
-      devShells = inputs.std.harvest inputs.self ["main" "devshells"];
-      packages = inputs.std.harvest inputs.self ["main" "packages"];
+      devShells = inputs.std.harvest inputs.self ["automation" "devshells"];
+      packages = inputs.std.harvest inputs.self ["common" "packages"];
     };
 }

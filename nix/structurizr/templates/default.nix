@@ -3,7 +3,7 @@
   cell,
 }: let
   inherit (cell) config lib;
-  inherit (inputs.cells.main.lib) l __inputs__;
+  inherit (inputs.cells.common.lib) l __inputs__;
 in {
   diagram =
     (

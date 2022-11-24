@@ -6,7 +6,7 @@
   config,
 }: let
   inherit (inputs) nixpkgs;
-  inherit (inputs.cells.main.lib) l;
+  inherit (inputs.cells.common.lib) l;
 in
   nixpkgs.writeText name ''
     @startjson
