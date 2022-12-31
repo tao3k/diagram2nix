@@ -3,7 +3,6 @@
     cells-lab.url = "github:GTrunSec/cells-lab";
     # follows
     nixpkgs.follows = "cells-lab/nixpkgs";
-    nixpkgs-lock.follows = "cells-lab/nixpkgs";
     std.follows = "cells-lab/std";
   };
 

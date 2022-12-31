@@ -10,5 +10,5 @@ in {
   in
     nixpkgs.callPackage ./yaml2dot.nix {inherit sources;};
 
-  craftql = nixpkgs.callPackage ./craftql.nix {inherit nixpkgs __inputs__;};
+  craftql = nixpkgs.callPackage ./craftql {inherit inputs __inputs__;};
 }

@@ -7,12 +7,11 @@
 
   l = nixpkgs.lib // builtins // (POP.lib) // (import ./extend.nix {inherit l;});
 
-  __inputs__ = callFlake "${(std.incl self [(self + /lock)])}/lock" {
-    nixpkgs.locked = inputs.nixpkgs-lock.sourceInfo;
+  __inputs__ = callFlake ./lock {
     dream2nix.inputs.nixpkgs = "nixpkgs";
   };
 in {
-  inherit l __inputs__;
+  inherit __inputs__;
 
   importYamlFromJson = f: let
     name = l.last (l.splitString "/" f);

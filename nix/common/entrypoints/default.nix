@@ -2,7 +2,7 @@
   inputs,
   cell,
 }: let
-  inherit (inputs.cells-lab._writers.lib) writeShellApplication;
+  inherit (inputs.cells-lab.writers.lib) writeShellApplication;
   inherit (cell.lib) __inputs__ l;
   inherit (inputs) nixpkgs;
 in {
