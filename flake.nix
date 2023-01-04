@@ -7,7 +7,7 @@
   };
 
   inputs = {
-    POP.url = "github:divnix/POP/visibility";
+    POP.url = "github:divnix/POP";
   };
 
   outputs = {std, ...} @ inputs:
