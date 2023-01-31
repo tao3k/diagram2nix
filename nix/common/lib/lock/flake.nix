@@ -22,6 +22,8 @@
 
     crane.url = "github:ipetkov/crane";
     crane.inputs.nixpkgs.follows = "nixpkgs";
+
+    nix-parsec.url = "github:kanwren/nix-parsec";
   };
 
   outputs = {self, ...}: {};
