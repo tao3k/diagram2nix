@@ -2,7 +2,7 @@
   inputs,
   cell,
 }: let
-  inherit (inputs.cells-lab.writers.lib) writeShellApplication;
+  inherit (inputs.std-ext.writers.lib) writeShellApplication;
   inherit (inputs) nixpkgs;
   inherit (inputs.cells.common.lib) __inputs__ l;
 in {
@@ -10,7 +10,7 @@ in {
     name = "update";
     runtimeInputs = [];
     text = ''
-      nix develop github:GTrunSec/cells-lab#devShells.x86_64-linux.update \
+      nix develop github:GTrunSec/std-ext#devShells.x86_64-linux.update \
       --refresh --command \
       nvfetcher-update nix/dot/packages/sources.toml
     '';

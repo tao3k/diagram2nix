@@ -9,10 +9,13 @@ in
     default = {...}: {
       name = "diagram2nix";
       imports = [
-        inputs.cells-lab.automation.devshellProfiles.default
+        inputs.std-ext.automation.devshellProfiles.default
       ];
 
-      nixago = [] ++ l.attrValues cell.nixago;
+      nixago = [
+        inputs.std-ext.automation.nixago.treefmt
+        cell.nixago.mdbook
+      ];
       commands = [
         {
           package = inputs.cells.structurizr.packages.structurizr-cli;
@@ -23,9 +26,9 @@ in
         {
           name = "nvfetcher-update";
           command = ''
-            nix develop github:GTrunSec/cells-lab#devShells.x86_64-linux.update \
+            nix develop github:GTrunSec/std-ext#devShells.x86_64-linux.update \
             --refresh --command \
-            nvfetcher-update nix/main/packages/sources.toml
+            nvfetcher-update "$@"
           '';
           help = "Update nix/main/packages/sources.toml";
         }

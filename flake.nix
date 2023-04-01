@@ -1,13 +1,9 @@
 {
   inputs = {
-    cells-lab.url = "github:GTrunSec/cells-lab";
+    std-ext.url = "github:GTrunSec/std-ext";
     # follows
-    nixpkgs.follows = "cells-lab/nixpkgs";
-    std.follows = "cells-lab/std";
-  };
-
-  inputs = {
-    POP.url = "github:divnix/POP";
+    nixpkgs.follows = "std-ext/nixpkgs";
+    std.follows = "std-ext/std";
   };
 
   outputs = {std, ...} @ inputs:

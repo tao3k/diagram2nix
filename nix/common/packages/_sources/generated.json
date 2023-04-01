@@ -1,21 +1,22 @@
 {
-  "bafi": {
-    "cargoLocks": null,
-    "extract": null,
-    "name": "bafi",
-    "passthru": null,
-    "pinned": false,
-    "src": {
-      "deepClone": false,
-      "fetchSubmodules": false,
-      "leaveDotGit": false,
-      "name": null,
-      "owner": "mmalcek",
-      "repo": "bafi",
-      "rev": "fc0252bf097e8e0bfb16c553e3e613023f3ff38a",
-      "sha256": "sha256-pJwab2XkhYT0CxLf1QPAfOkjld01Jthe9WZAnX4Z5zg=",
-      "type": "github"
-    },
-    "version": "fc0252bf097e8e0bfb16c553e3e613023f3ff38a"
-  }
+    "bafi": {
+        "cargoLocks": null,
+        "date": "2022-10-07",
+        "extract": null,
+        "name": "bafi",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "mmalcek",
+            "repo": "bafi",
+            "rev": "f1ec2ef3213d8cfcee703d9fe86ad94825d72faf",
+            "sha256": "sha256-xuiUQVecDcsZ9GGQbOA51XxDvr4LGOsj71hmfNllGkM=",
+            "type": "github"
+        },
+        "version": "f1ec2ef3213d8cfcee703d9fe86ad94825d72faf"
+    }
 }
