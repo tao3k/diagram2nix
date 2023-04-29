@@ -12,7 +12,7 @@
 
       cellsFrom = ./nix;
 
-      cellBlocks = with std.blockTypes;[
+      cellBlocks = with std.blockTypes; [
         (installables "packages")
 
         (functions "devshellProfiles")

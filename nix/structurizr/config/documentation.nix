@@ -9,7 +9,7 @@
     images ? [],
     decisions ? [],
   }:
-    l.kPop {
+    l.pop.kPop {
       inherit sections images decisions;
     };
 }

@@ -5,7 +5,7 @@
   structurizr-sources,
   unzip,
   jre,
-  ...
+  makeWrapper
 }:
 stdenv.mkDerivation {
   inherit (structurizr-sources.structurizr-cli) src pname version;
@@ -14,6 +14,7 @@ stdenv.mkDerivation {
     autoPatchelfHook
     unzip
     jre
+    makeWrapper
   ];
 
   unpackPhase = "unzip $src";
@@ -30,8 +31,12 @@ stdenv.mkDerivation {
     mv {lib,docs} $out/bin
     mv structurizr* $out/bin
 
+    wrapProgram $out//bin/structurizr.sh \
+     --prefix PATH : ${lib.makeBinPath [jre]} \
+
     runHook postInstall
   '';
+
   meta = {
     description = "Structurizr CLI";
     mainProgram = "structurizr.sh";

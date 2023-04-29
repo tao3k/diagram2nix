@@ -3,34 +3,70 @@
   cell,
 }: let
   inherit (cell) config lib;
-  inherit (inputs.cells.common.lib) l __inputs__;
-in {
-  diagram =
-    (
-      ((config.diagram.new {}).addSoftwareSystem {
-        id = "1";
-        tags = ["System" "Element System"];
+  inherit (inputs.cells.common.lib) __inputs__ l;
+in rec {
+  diagram = (
+    ((config.diagram.new {}).addSoftwareSystem {
+      id = "1";
+      tags = ["System" "Element System"];
+    })
+    .addSoftwareSystems [
+      (cell.config.softwareSystem.new {
+        id = "2";
+        tags = ["Element System"];
       })
-      .addSoftwareSystems [
-        (cell.config.softwareSystem.new {
-          id = "2";
-          tags = ["Element System"];
-        })
-      ]
-    )
-    .__unpop__;
+    ]
+  );
 
-  relationships = (config.relationships.new {}).__unpop__;
+  relationships = config.relationships.new {};
 
-  ElementStyle = (config.ElementStyle.new {}).__unpop__;
+  ElementStyle = config.ElementStyle.new {};
 
-  ElementView = (config.ElementView.new {}).__unpop__;
+  ElementView = config.ElementView.new {};
 
   a =
-    l.kxPop (cell.config.softwareSystem.new {
+    l.pop.kxPop (cell.config.softwareSystem.new {
       id = "2";
       tags = ["Element System"];
     }) {
-      b = "s";
+      extensions = _: _: {
+        a = "s";
+      };
     };
+
+  c = l.functionArgs ({c ? "1", ...}: {
+    d = "s";
+  });
+
+  nixosPop = with l.pop; (pop {
+    supers = [];
+    addConfig = {};
+    addConfigs = {};
+
+  });
+
+  test = args:
+    with l.pop; (kPop (({config, ...}: {
+        test = {
+          a = "s";
+        };
+      })
+      args));
+
+  eval = l.evalModules {
+    specialArgs = {};
+    modules = with inputs.nixpkgs.lib; l.flatten [
+      {
+        options.test = l.mkOption {
+          default = {};
+          type = types.attrs;
+        };
+      }
+      ({lib, ...} @ args: {
+        imports = [
+          (l.pop.unpop (test args))
+        ];
+      })
+    ];
+  };
 }

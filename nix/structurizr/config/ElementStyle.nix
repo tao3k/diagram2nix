@@ -7,7 +7,7 @@
   default = l.mapAttrs (_: v: v.type) cell.lib.jsonSchema.components.schemas.ElementStyle.properties;
 in {
   new = {...}:
-    l.kPop (default
+    l.pop.kPop (default
       // {
       });
 }

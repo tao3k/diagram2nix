@@ -1,16 +1,17 @@
 {
-  "structurizr-cli": {
-    "cargoLocks": null,
-    "extract": null,
-    "name": "structurizr-cli",
-    "passthru": null,
-    "pinned": false,
-    "src": {
-      "name": null,
-      "sha256": "sha256-0E1MIq7uzQT/G6cVSxTWq6nVEnQP91KTJwtFbyObjUs=",
-      "type": "url",
-      "url": "https://github.com/structurizr/cli/releases/download/v1.20.0/structurizr-cli-1.20.0.zip"
-    },
-    "version": "1.20.0"
-  }
+    "structurizr-cli": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "structurizr-cli",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-Jbvk6/nsGOzLfHqG2+wfOgAc3suwRM4+4js4LFtLoaQ=",
+            "type": "url",
+            "url": "https://github.com/structurizr/cli/releases/download/v1.30.0/structurizr-cli-1.30.0.zip"
+        },
+        "version": "1.30.0"
+    }
 }

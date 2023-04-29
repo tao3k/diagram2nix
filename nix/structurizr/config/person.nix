@@ -19,7 +19,7 @@ in {
   }: let
     tags' = l.concatStringsSep "," tags;
   in
-    l.kPop ({
+    l.pop.kPop ({
         inherit description;
       }
       // {

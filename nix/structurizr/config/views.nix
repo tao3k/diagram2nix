@@ -15,7 +15,7 @@
     systemContextView ? [],
     systemLandscapeView ? [],
   }:
-    l.kPop {
+    l.pop.kPop {
       inherit
         component
         configuration

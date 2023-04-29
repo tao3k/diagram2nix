@@ -8,7 +8,7 @@
     branding ? {},
     styles ? {},
   }:
-    l.kPop {
+    l.pop.kPop {
       inherit branding styles;
     };
 }

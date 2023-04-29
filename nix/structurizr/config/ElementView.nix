@@ -11,7 +11,7 @@ in {
     x ? 0,
     y ? 0,
   }:
-    l.kPop (default
+    l.pop.kPop (default
       // {
         inherit id x y;
       });

@@ -2,4 +2,4 @@
   l,
   jsonSchema,
 }: {...}:
-l.kPop jsonSchema.components.schemas.SystemContextView.properties
+l.pop.kPop jsonSchema.components.schemas.SystemContextView.properties

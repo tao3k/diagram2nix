@@ -10,7 +10,7 @@
     relationships ? [],
   }:
   # jsonSchema.components.schemas.SoftwareSystem.properties
-    l.kPop {
+    l.pop.kPop {
       inherit
         id
         description

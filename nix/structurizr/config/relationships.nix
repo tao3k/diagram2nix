@@ -10,7 +10,7 @@
     description ? "A relationship between two entities",
     defaultTags ? ["Relationship"],
   }:
-    l.kPop {
+    l.pop.kPop {
       inherit id tags sourceId destinationId description defaultTags;
     };
 }
